@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
   include ../common/head.pug
-  +head("Edit lead")
+  +head("Edit ticket")
   body
     header
       include ../common/navbar.pug
@@ -10,13 +10,13 @@ html(lang='en')
       .container
         .row.align-items-center
           .col-md-6.order-md-1.text-center.text-md-left.pr-md-5
-            h1 Edit Leads
-            p #{lead.response}
-            form(action='/lead/' + lead.id + "/edit", method="POST")
+            h1 Edit tickets
+            p #{ticket.detail}
+            form(action='/ticket/' + ticket.id + "/edit", method="POST")
                 .input-group.mb-3
-                    input(name="lead_email", type="email", placeholder="Enter your email address", value=lead.email).form-control
+                    input(name="ticket_response", type="text", placeholder="Give your response here", value=ticket.response).form-control
                     .input-group-append
                         button(type="submit").btn.btn-primary Save
     include ../common/footer.pug
     +footer()
-    script(src='/javascripts/leads.js')
+    script(src='/javascripts/tickets.js')

@@ -43,27 +43,27 @@ exports.show_ticket = function(req, res, next) {
   
 }
 
-exports.show_edit_lead = function(req, res, next) {
-  return models.Lead.findOne({
+exports.show_edit_ticket = function(req, res, next) {
+  return models.Ticket.findOne({
       where: {
-        id: req.params.lead_id
+        id: req.params.ticket_id
       }
-    }).then(lead => {
-      res.render('lead/edit_lead', {lead: lead});
+    }).then(ticket => {
+      res.render('ticket/edit_ticket', {ticket: ticket});
   })
   
 }
 
 
-exports.edit_lead = function(req, res, next) {
-  return models.Lead.update({
-    email: req.body.lead_email
+exports.edit_ticket = function(req, res, next) {
+  return models.Ticket.update({
+    response: req.body.ticket_response
   }, {
     where: {
-      id: req.params.lead_id
+      id: req.params.ticket_id
     }
   }).then(result=>{
-    res.redirect('/lead/' + req.params.lead_id);
+    res.redirect('/ticket/' + req.params.ticket_id);
   })
   
 }
