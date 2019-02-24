@@ -7,7 +7,7 @@ const validPassword = function(user, password) {
     return bcrypt.compareSync(password, user.password);
 }
 module.exports = function(passport) {
-    passport.serializeuser(function(user, done) {
+    passport.serializeUser(function(user, done) {
         done(null, user.id);
     });
 
