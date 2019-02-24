@@ -18,6 +18,6 @@ router.get('/tickets', hasAuth, landing.show_tickets);
 router.get('/ticket/:ticket_id', hasAuth, landing.show_ticket);
 router.get('/ticket/:ticket_id/edit', hasAuth, landing.show_edit_ticket);
 router.post('/ticket/:ticket_id/edit', hasAuth, landing.edit_ticket);
-router.post('/lead/:lead_id/delete', hasAuth, landing.delete_lead);
-router.post('/lead/:lead_id/delete-json', hasAuth, landing.delete_lead_json);
+router.post('/ticket/:ticket_id/delete', hasAuth, landing.delete_ticket);
+router.post('/ticket/:ticket_id/delete-json', hasAuth, landing.delete_ticket_json);
 module.exports = router;

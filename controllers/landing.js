@@ -68,22 +68,22 @@ exports.edit_ticket = function(req, res, next) {
   
 }
 
-exports.delete_lead = function(req, res, next) {
-  return models.Lead.destroy({
+exports.delete_ticket = function(req, res, next) {
+  return models.Ticket.destroy({
     where: {
-      id: req.params.lead_id
+      id: req.params.ticket_id
     }
   }).then(result=>{
-    res.redirect('/leads');
+    res.redirect('/tickets');
   })
   
 }
 
 
-exports.delete_lead_json = function(req, res, next) {
-  return models.Lead.destroy({
+exports.delete_ticket_json = function(req, res, next) {
+  return models.Ticket.destroy({
     where: {
-      id: req.params.lead_id
+      id: req.params.ticket_id
     }
   }).then(result=>{
     res.send({msg: "Success"});
