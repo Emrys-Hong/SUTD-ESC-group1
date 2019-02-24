@@ -37,6 +37,10 @@ module.exports = {
       detail: {
           allowNull: false,
           type: Sequelize.STRING
+      },
+      response: {
+        allowNull: true,
+        type: Sequelize.STRING
       }
 
     })

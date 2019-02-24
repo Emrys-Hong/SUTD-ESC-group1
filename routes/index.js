@@ -15,7 +15,7 @@ router.get('/logout', user.logout);
 router.get('/', landing.get_landing);
 router.post('/', landing.submit_ticket);
 router.get('/tickets', hasAuth, landing.show_tickets);
-router.get('/lead/:lead_id', hasAuth, landing.show_lead);
+router.get('/ticket/:ticket_id', hasAuth, landing.show_ticket);
 router.get('/lead/:lead_id/edit', hasAuth, landing.show_edit_lead);
 router.post('/lead/:lead_id/edit', hasAuth, landing.edit_lead);
 router.post('/lead/:lead_id/delete', hasAuth, landing.delete_lead);

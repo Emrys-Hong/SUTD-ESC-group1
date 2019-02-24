@@ -31,10 +31,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true
     },
     createdAt: {
-        type: DataTypes.STRING,
+        type: DataTypes.DATE,
         allowNull: true
     },
     updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: true
+    },
+    response: {
         type: DataTypes.STRING,
         allowNull: true
     }

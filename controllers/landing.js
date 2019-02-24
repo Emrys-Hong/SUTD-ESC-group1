@@ -11,7 +11,9 @@ exports.submit_ticket = function(req, res, next) {
   console.log('contact', req.body.contact);
   console.log('topic', req.body.topic);
   console.log('detail', req.body.detail);
-  
+  console.log('created', req.body.createdAt);
+  console.log('updated', req.body.updatedAt);
+  console.log('response', req.body.response);
   return models.Ticket.create({
     email: req.body.email,
     name: req.body.name,
@@ -30,13 +32,13 @@ exports.show_tickets = function(req, res, next) {
   
 }
 
-exports.show_lead = function(req, res, next) {
-  return models.Lead.findOne({
+exports.show_ticket = function(req, res, next) {
+  return models.Ticket.findOne({
       where: {
-        id: req.params.lead_id
+        id: req.params.ticket_id
       }
-    }).then(lead => {
-      res.render('lead/lead', {lead: lead});
+    }).then(ticket => {
+      res.render('ticket/ticket', {ticket: ticket});
   })
   
 }
