@@ -13,7 +13,7 @@ router.post('/logout', user.logout);
 router.get('/logout', user.logout);
 /* GET home page. */
 router.get('/', landing.get_landing);
-router.post('/', landing.submit_ticket);
+router.post('/', isLoggedIn, landing.submit_ticket);
 router.get('/tickets', hasAuth, landing.show_tickets);
 router.get('/ticket/:ticket_id', hasAuth, landing.show_ticket);
 router.get('/ticket/:ticket_id/edit', hasAuth, landing.show_edit_ticket);
