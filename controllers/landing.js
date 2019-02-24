@@ -5,12 +5,21 @@ exports.get_landing = function(req, res, next) {
     res.render('landing', { title: 'Express' , user: req.user});
 }
 
-exports.submit_lead = function(req, res, next) {
-  console.log("lead email: ", req.body.lead_email);
-  return models.Lead.create({
-    email:req.body.lead_email
+exports.submit_ticket = function(req, res, next) {
+  console.log("name: ", req.body.name);
+  console.log('email:', req.body.email);
+  console.log('contact', req.body.contact);
+  console.log('topic', req.body.topic);
+  console.log('detail', req.body.detail);
+  
+  return models.Ticket.create({
+    email: req.body.email,
+    name: req.body.name,
+    contact: req.body.contact,
+    topic: req.body.topic,
+    detail: req.body.detail
   }).then(lead=>{
-    res.redirect('/leads');
+    res.redirect('/');
   })
 }
 

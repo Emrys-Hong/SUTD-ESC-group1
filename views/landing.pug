@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
   include common/head.pug
-  +head("Starter MVP")
+  +head("Create your own ticket!")
   body
     header
       include common/navbar.pug
@@ -15,10 +15,30 @@ html(lang='en')
             p.lead.mb-4 Learn how to launch a landing page and start collecting sales leads
 
             form(action='/', method="POST")
-              .input-group.mb-3
-                input(name="lead_email", type="email", placeholder="Enter your email address").form-control
+              table.table
+                p Your Name
+                tr
+                  input(name="name", type="text", placeholder="e.g. Antony Pym").form-control
+                p Your email
+                tr
+                  input(name="email", type="email", placeholder="e.g. antonypym@accenture.com").form-control
+                p Your contact
+                tr
+                  input(name="contact", type="number", placeholder="e.g. 91234567").form-control
+                p Select the assets or the topic you are interested in (hold ctl/cmd to select multiple)
+
+                - let topics = ["API Dev Ops", "Chat as a service", "recruitment Platform", "Aesop", "Travel market space", "Banking App", "AR car visualizer"];
+                select(name='topic')
+                  each topic in topics
+                    option(value=topic) #{topic}
+
+                p Ticket Details
+                tr
+                  input(name='detail', type='text', placeholder="Please let us know which assets are you interested in trying out").form-control
+                
                 .input-group-append
-                  button(type="submit").btn.btn-primary Get Started
+                  button(type="submit").btn.btn-primary Submit
+
 
     include common/footer.pug
     +footer()
