@@ -23,9 +23,9 @@ exports.submit_ticket = function(req, res, next) {
   })
 }
 
-exports.show_leads = function(req, res, next) {
-  return models.Lead.findAll().then(leads => {
-      res.render('lead/leads', { title: 'Express', leads: leads});
+exports.show_tickets = function(req, res, next) {
+  return models.Ticket.findAll().then(tickets => {
+      res.render('ticket/tickets', { title: 'Express', tickets: tickets});
   })
   
 }

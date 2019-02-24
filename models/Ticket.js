@@ -29,6 +29,14 @@ module.exports = (sequelize, DataTypes) => {
     detail: {
         type: DataTypes.STRING,
         allowNull: true
+    },
+    createdAt: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    updatedAt: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
   });
 
